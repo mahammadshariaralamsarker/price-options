@@ -16,14 +16,16 @@ function Navbar() {
     ];
 
     return (
-        <nav>
+        <nav className="text-black p-6 ">
             <div className="md:hidden" onClick={()=> setopen(!open)}>
             {
                 open=== true?<IoMdClose></IoMdClose>:<RiMenu2Line></RiMenu2Line>
             }
             
             </div>
-            <ul className="md:flex ">
+            <ul className={`md:flex absolute md:static 
+            ${open? '':'hidden'}
+            `}>
                 {
                     routes.map(route => <Link key={route.id} route={route}></Link>)
                 }
