@@ -1,6 +1,12 @@
+import { RiMenu2Line } from "react-icons/ri";
+import { IoMdClose } from "react-icons/io";
 import Link from "./Link/Link";
+import { useState } from "react";
+
 
 function Navbar() {
+    const [open, setopen] = useState(false);
+
     const routes = [
         { id: 1, path: '/', name: 'Home' },
         { id: 2, path: '/about', name: 'About' },
@@ -11,9 +17,15 @@ function Navbar() {
 
     return (
         <nav>
+            <div className="md:hidden" onClick={()=> setopen(!open)}>
+            {
+                open=== true?<IoMdClose></IoMdClose>:<RiMenu2Line></RiMenu2Line>
+            }
+            
+            </div>
             <ul className="md:flex ">
                 {
-                    routes.map(route =><Link key={route.id} route={route}></Link> )
+                    routes.map(route => <Link key={route.id} route={route}></Link>)
                 }
             </ul>
         </nav>

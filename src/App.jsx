@@ -1,13 +1,13 @@
 import './App.css'
-import Navbar from './Components/Navbar'
-// import Navbar from './Components/Navbar/Navbar'
+import NavbarDaisy from './Components/Navbar'
+import Navbar2 from './Components/Navbar/NavbarDaisy'
 
 function App() {
 
   return (
     <>
-      {/* <Navbar></Navbar> */}
-      <Navbar></Navbar>
+      <NavbarDaisy></NavbarDaisy>
+      <Navbar2></Navbar2>
     </>
   )
 }
